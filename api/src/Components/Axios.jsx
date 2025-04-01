@@ -2,22 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 
-const inters =()=>{
-    axios.interceptors.request.use((request)=>{
-        console.log("request",request)
-        return request
-    })
-}
-
 const Axios = () => {
-  const [data, setData] = useState([]); // State to store data
-  const [error, setError] = useState(null); // State to store errors
-  const [loading, setLoading] = useState(true); // State for loading indicator
+  const [data, setData] = useState([]); 
+  const [error, setError] = useState(null); 
 
 
   useEffect(() => {
-    inters()
-    const post = async () => {
+   
+    const posts = async () => {
       try {
         const response = await axios.get(
           "https://jsonplaceholder.typicode.com/posts"
@@ -25,17 +17,14 @@ const Axios = () => {
         setData(response.data);
       } catch (e) {
         setError(e);
-      } finally {
-        setLoading(false);
-      }
+      } 
+    
     };
-    post()
+    posts()
   }, []);
 
 
-  if(loading){
-    return <>loading...</>
-  }
+
   if(error){
     return <>err : {error}</>
   }

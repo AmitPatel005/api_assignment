@@ -4,7 +4,7 @@ import React from 'react'
 const Interseptor = () => {
     axios.interceptors.request.use((request)=>{
         console.log("request: ",request)
-        request.headers.agee="jsdhfiadsfijks"
+        request.headers.agee=15
         return request
       })
       axios.interceptors.response.use((response)=>{

@@ -1,7 +1,8 @@
 
 import './App.css'
 import Axios from './Components/Axios'
-import Fetch from './Components/Fetch'
+import AxiosCrud from './Components/AxiosCrud'
+
 // import Interseptor from './Components/Interseptor'
 
 function App() {
@@ -9,9 +10,10 @@ function App() {
 
   return (
     <>
-      {/* <Fetch/> */}
-      {/* <Interseptor/> */}
-      <Axios/>
+     
+      <Interseptor/>
+      <Axios/> 
+      {/* <AxiosCrud/> */}
     </>
   )
 }
